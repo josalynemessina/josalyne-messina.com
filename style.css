@@ -44,3 +44,8 @@ body {
     letter-spacing: -0.05em;
     line-height: 1.1;
 }
+.about-me {
+    border: 1px solid #0f0301; margin-top: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
