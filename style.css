@@ -1,0 +1,16 @@
+body {
+    background-color: #f5f0bc;
+    font-family: Tahoma, sans-serif;
+    color: #0f0301;
+    
+}
+.hero { padding: 0.5rem 1rem; }
+.fit {
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+    font-family: "Inter Tight", "Helevtica Neue", Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+}
