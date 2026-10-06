@@ -46,6 +46,6 @@ body {
 }
 .about-me {
     border: 1px solid #0f0301; margin-top: 2rem;
-    padding: 1rem;
-    box-sizing: border-box;
+    padding: 1rem; margin: 0.5rem;
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem); line-height: 1.5;
 }
