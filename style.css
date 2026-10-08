@@ -24,6 +24,12 @@ body {
 .topbar a:hover {
     text-decoration: underline;
 }
+.topbar a:first-child {
+    justify-self: start; /* Locks INSTAGRAM strictly to the left edge */
+}
+.topbar a:last-child {
+    justify-self: end;   /* Locks CONTACT strictly to the right edge */
+}
 .topbar .left {
     justify-self: start;
 }  
