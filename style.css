@@ -51,3 +51,76 @@ body {
     font-size: clamp(1rem, 0.95rem + 0.35vw, 1.35rem);
     line-height: 1.4;
 }
+/* ---------- cabinet ---------- */
+.cabinet {
+    --paper: #f5f0bc;               /* same as your page background */
+    --ink: #0f0301;                 /* same as your text color */
+    --tab-h: 34px;
+    /* closed folder height: splits one screen evenly between all folders.
+       --n is set by script.js (number of folders) */
+    --strip: max(calc(var(--tab-h) + 10px), calc((100svh - var(--tab-h)) / var(--n, 8)));
+ 
+    margin: 2rem 1rem 0;            /* same 1rem side margin as the rest of the page */
+    padding-top: var(--tab-h);      /* room for the first tab */
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.cabinet, .cabinet * { box-sizing: border-box; }
+ 
+.folder {
+    position: relative;
+    min-height: var(--strip);
+    background: var(--paper);
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+    border-right: 1px solid var(--ink);
+}
+.folder:last-child {
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0 0 24px 24px;
+}
+ 
+.tab {
+    position: absolute;
+    top: calc(var(--tab-h) * -1);
+    height: calc(var(--tab-h) + 1px);
+    padding: 0 26px;
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    font: inherit;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    border-bottom: none;
+    border-radius: 18px 18px 0 0;
+}
+.folder.left  .tab { left: 28px; }
+.folder.right .tab { right: 28px; }
+.tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+ 
+/* the body: closed = 0 tall, hovered = grows to fit its content */
+.body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .45s ease;
+}
+.folder:hover .body,
+.folder:has(:focus-visible) .body { grid-template-rows: 1fr; }
+.clip { overflow: hidden; min-height: 0; }
+.content { padding: 28px 32px 0; }
+.content h2 { font-size: 1rem; font-weight: 500; margin: 0 0 1rem; }
+.content p { margin: 0 0 1rem; max-width: 62ch; }
+/* bottom room so the next folder's tab never covers text */
+.content::after { content: ""; display: block; height: var(--tab-h); }
+ 
+@media (prefers-reduced-motion: reduce) {
+    .body { transition: none; }
+}
+@media (max-width: 520px) {
+    .tab { padding: 0 16px; gap: 1.5rem; font-size: 13px; }
+    .folder.left .tab { left: 12px; }
+    .folder.right .tab { right: 12px; }
+    .content { padding: 24px 20px 0; }
+}
