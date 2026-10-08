@@ -17,12 +17,12 @@ new ResizeObserver(resize).observe(hero);
 // edit this array: one entry per folder. alternates left/right automatically.
 // body can hold any html: images, links, sketches, process notes.
 const folders = [
-    { id: "008", name: "process", body: "<p></p>" },
+    { id: "008", name: "process", body: "<p>what gets me from start to finish.</p>" },
     { id: "007", name: "resume & experience", body: "<p>yes, i have that too!</p>" },
     { id: "006", name: "personal projects", body: "<p>things that just don't fit in any other folder.</p>" },
     { id: "005", name: "web design", body: "<p>except it's mostly vibecoding & figma.</p>" },
     { id: "004", name: "branding", body: "<p>my bread & butter.</p>" },
-    { id: "003", name: "social work", body: "<p>everything i do on the side.</p>" },
+    { id: "003", name: "socials", body: "<p>everything i do on the side.</p>" },
     { id: "002", name: "campaigns", body: "<p>getting the message out there.</p>" },
     { id: "001", name: "case studies", body: "<p>let's dive into why things do (or don't) work.</p>" }
 ];
