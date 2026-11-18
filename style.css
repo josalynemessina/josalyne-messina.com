@@ -138,3 +138,56 @@ body {
     .folder.right .tab { right: 12px; }
     .content { padding: 24px 20px 0; }
 }
+.float-zone {
+  position: relative;
+  height: 260px;          /* room for them to drift around */
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;       /* keeps them from wandering off on mobile */
+}
+
+.float-link {
+  position: absolute;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* different paths + speeds so they feel independent */
+.float-email {
+  top: 15%;
+  left: 5%;
+  animation: drift-a 9s ease-in-out infinite;
+}
+
+.float-insta {
+  top: 55%;
+  left: 35%;
+  animation: drift-b 11s ease-in-out infinite;
+}
+
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) rotate(-2deg); }
+  25%      { transform: translate(40px, 25px) rotate(1deg); }
+  50%      { transform: translate(15px, 60px) rotate(-1deg); }
+  75%      { transform: translate(-10px, 30px) rotate(2deg); }
+}
+
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) rotate(2deg); }
+  25%      { transform: translate(-30px, -20px) rotate(-1deg); }
+  50%      { transform: translate(-60px, 10px) rotate(1deg); }
+  75%      { transform: translate(-20px, -35px) rotate(-2deg); }
+}
+
+/* moving targets are annoying to click, so they stop on hover */
+.float-link:hover {
+  animation-play-state: paused;
+}
+
+/* respect people who turn off motion */
+@media (prefers-reduced-motion: reduce) {
+  .float-link { animation: none; position: static; display: inline-block; margin: 0.5rem; }
+}
