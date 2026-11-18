@@ -60,7 +60,7 @@ body {
 }
 .contact-info {
     padding: 0.5vw 1rem;
-    text-align: justify;
+    text-align: center;
     text-justify: inter-word;
     font-size: clamp(1rem, 0.95rem + 0.35vw, 1.35rem);
     line-height: 1.4;
