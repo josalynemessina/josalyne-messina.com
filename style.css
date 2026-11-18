@@ -58,6 +58,13 @@ body {
     font-size: clamp(1rem, 0.95rem + 0.35vw, 1.35rem);
     line-height: 1.4;
 }
+.contact-info {
+    padding: 0.5vw 1rem;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: clamp(1rem, 0.95rem + 0.35vw, 1.35rem);
+    line-height: 1.4;
+}
 /* ---------- cabinet ---------- */
 .cabinet {
     --paper: #f5f0bc;               /* same as your page background */
